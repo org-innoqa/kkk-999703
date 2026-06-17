@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Car, LogIn, LogOut, LayoutDashboard, Plus, Trash2 } from 'lucide-react';
+import { LogIn, LogOut, LayoutDashboard, Plus, Trash2, Car } from 'lucide-react';
 import { db } from './lib/db';
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       <nav className="bg-secondary text-white p-4 shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold text-primary cursor-pointer" onClick={() => setView('home')}>HızlıRent</h1>
@@ -61,7 +61,6 @@ export default function App() {
         ) : (
           <div className="bg-white p-8 rounded-2xl shadow-lg">
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-2"><LayoutDashboard className="text-primary"/> Yönetim Paneli</h2>
-            
             <div className="mb-10 p-6 border rounded-xl bg-gray-50">
               <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><Plus/> Yeni Araç Ekle</h3>
               <form onSubmit={handleAddCar} className="flex gap-4">
@@ -70,7 +69,6 @@ export default function App() {
                 <button type="submit" className="bg-primary text-white px-6 py-3 rounded-lg font-bold">Ekle</button>
               </form>
             </div>
-
             <div>
               <h3 className="font-bold text-lg mb-4">Mevcut Araçlar</h3>
               <div className="space-y-2">
